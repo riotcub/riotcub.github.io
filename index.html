@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Riotcub</title>
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile {
+            position: relative;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease 2s; 
+        }
+
+        .icons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 500px;
+            height: 500px;
+            opacity: 0; 
+            animation: iconsMove 2s forwards; 
+        }
+
+        .icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            opacity: 0; 
+            animation: iconMove 2s forwards;
+        }
+
+        .icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .icon-text {
+            font-size: 15px;
+            margin-top: 10px;
+            font-weight: bold;
+            display: none; 
+        }
+
+        .top { top: 0; left: 50%; transform: translateX(-50%); }
+        .bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .left { top: 50%; left: 0; transform: translateY(-50%); }
+        .right { top: 50%; right: 0; transform: translateY(-50%); }
+        .top-left { top: 0; left: 0; }
+        .top-right { top: 0; right: 0; }
+        .bottom-left { bottom: 0; left: 0; }
+        .bottom-right { bottom: 0; right: 0; }
+
+        @keyframes iconMove {
+            0% {
+                top: 50%;
+                left: 50%;
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes iconsMove {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .icon:hover .icon-text {
+            display: block;
+        }
+
+        .icons > .icon:nth-child(1) { animation-delay: 0.2s; }
+        .icons > .icon:nth-child(2) { animation-delay: 0.4s; }
+        .icons > .icon:nth-child(3) { animation-delay: 0.6s; }
+        .icons > .icon:nth-child(4) { animation-delay: 0.8s; }
+        .icons > .icon:nth-child(5) { animation-delay: 1s; }
+        .icons > .icon:nth-child(6) { animation-delay: 1.2s; }
+        .icons > .icon:nth-child(7) { animation-delay: 1.4s; }
+
+        .name.show {
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        a {
+            text-decoration: none; 
+            color: inherit; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="avatar.png" alt="avatar" class="avatar">
+            <div class="name" id="name">Riotcub</div>
+            <div class="icons">
+                <a href="https://x.com/Riotcub" class="icon top" target="_blank">
+                    <img src="font/X.png" class="icon-img">
+                    <div class="icon-text">X</div>
+                </a>
+                <a href="https://www.pixiv.net/users/115231684" class="icon bottom" target="_blank">
+                    <img src="font/Pixiv.png" class="icon-img">
+                    <div class="icon-text">Pixiv</div>
+                </a>
+                <a href="https://www.xiaohongshu.com/user/profile/59ebfdc211be1017cea20133" class="icon left" target="_blank">
+                    <img src="font/Xiaohongshu.png" class="icon-img">
+                    <div class="icon-text">Xiaohongshu</div>
+                </a>
+                <a href="https://riotcub.bsky.social" class="icon right" target="_blank">
+                    <img src="font/Bluesky.png" class="icon-img">
+                    <div class="icon-text">Bluesky</div>
+                </a>
+                <a href="https://www.douyin.com/user/MS4wLjABAAAA7cXK95nUl9S_DArLHYYrQz07AzCIbN8Rb4zWBgZTOsf6MAoMgLtcvxcnVFw-caa0" class="icon top-left" target="_blank">
+                    <img src="font/Douyin.png" class="icon-img">
+                    <div class="icon-text">Douyin</div>
+                </a>
+                <a href="https://www.tiktok.com/@_riotcub_" class="icon top-right" target="_blank">
+                    <img src="font/TikTok.png" class="icon-img">
+                    <div class="icon-text">TikTok</div>
+                </a>
+                <a href="https://weibo.com/u/7992118290" class="icon bottom-left" target="_blank">
+                    <img src="font/Weibo.png" class="icon-img">
+                    <div class="icon-text">Weibo</div>
+                </a>
+                <a href="https://www.instagram.com/_riotcub_/" class="icon bottom-right" target="_blank">
+                    <img src="font/Instagram.png" class="icon-img">
+                    <div class="icon-text">Instagram</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('name').classList.add('show'); 
+            }, 2000); 
+        };
+    </script>
+</body>
+</html>
