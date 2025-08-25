@@ -136,6 +136,13 @@
             text-decoration: none; 
             color: inherit; 
         }
+
+        @media (max-width: 768px) {
+            .container {
+                transform: scale(0.5); /* 缩小50% */
+                transform-origin: center center; /* 缩小时以中心为原点 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -189,3 +196,4 @@
     </script>
 </body>
 </html>
+
